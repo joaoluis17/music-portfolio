@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "HomePage",
+  name: "Header",
   data() {
     return {
       mostrarDiscografia: false,
@@ -36,3 +36,35 @@ export default {
   },
 };
 </script>
+
+<style>
+.header {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  padding: 15px 0;
+  top: 0;
+  z-index: 500;
+  transition: background 0.3s ease-in-out;
+}
+
+.header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+}
+
+.header nav ul li a:hover {
+  text-decoration: underline;
+  color: #f39c12;
+}
+</style>
