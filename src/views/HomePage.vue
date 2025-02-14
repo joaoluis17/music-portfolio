@@ -5,32 +5,6 @@
       <!-- <img src="/assets/logo.png" alt="John Prado Logo" class="logo" /> -->
     </div>
 
-    <!-- Cabeçalho -->
-    <header class="header">
-      <nav>
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li 
-            class="menu-discografia"
-            @mouseenter="mostrarDiscografia = true"
-            @mouseleave="mostrarDiscografia = false"
-          >
-            <a href="#discografia">Discografia</a>
-            <!-- Dropdown -->
-            <div v-if="mostrarDiscografia" class="dropdown">
-              <ul>
-                <li><a href="#eps">🎵 EPs</a></li>
-                <li><a href="#singles">🎶 Singles</a></li>
-                <li><a href="#versoes">🎸 Versões</a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
-
     <!-- Seções -->
     <section id="inicio" class="section"></section>
     <section id="sobre" class="section">
