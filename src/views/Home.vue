@@ -9,29 +9,21 @@
 
     <About />
     
+    <Discography />
     
-    <section id="contato" class="section">
-      <div class="content">
-        <h2>Contato</h2>
-        <p>Entre em contato através do e-mail: contato@johnprado.com</p>
-      </div>
-    </section>
   </div>
 </template>
 
 <script>
 import About from './About.vue';
+import Discography from './Discography.vue';
 
 export default {
   name: "Home",
   components: {
     About,
-  },
-  data() {
-    return {
-      mostrarDiscografia: false,
-    };
-  },
+    Discography
+  }
 };
 </script>
 
@@ -54,23 +46,23 @@ export default {
 
 /* Logo */
 .logo-container {
-  position: fixed;
-  top: 50%;
+  position: absolute; /* Evita que a logo fique sobrepondo tudo */
+  top: 20px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: 1000;
-  text-align: center;
 }
 
 .logo {
-  width: 300px;
-  max-width: 80%;
+  width: 200px;
+  max-width: 50%;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
 /* Seções */
 .section {
-  height: 100vh;
+  min-height: 100vh;
+  padding: 4rem 1rem; /* Garante espaçamento interno */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,5 +73,12 @@ export default {
 
 #inicio {
   background-image: url('../assets/bg-inicio.jpg');
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logo {
+    width: 150px;
+  }
 }
 </style>
