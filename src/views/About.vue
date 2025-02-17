@@ -3,7 +3,6 @@
     <div class="content">
       <h1>A minha trajetória</h1>
 
-      <!-- Primeira parte do texto -->
       <div class="text-image">
         <img src="../assets/perfil.png" alt="John Prado" class="image" />
         <div class="text">
@@ -11,7 +10,6 @@
         </div>
       </div>
 
-      <!-- Segunda parte do texto -->
       <div class="text-image">
         <img src="../assets/releases.png" alt="Início da carreira" class="image" />
         <div class="text">
@@ -19,7 +17,6 @@
         </div>
       </div>
 
-      <!-- Terceira parte do texto -->
       <div class="text-image">
         <img src="../assets/capa-hardblend.jpg" alt="Banda Hard Blend" class="image" />
         <div class="text">
@@ -27,7 +24,6 @@
         </div>
       </div>
 
-      <!-- Quarta parte do texto -->
       <div class="text-image">
         <img src="../assets/capa-deferred.jpeg" alt="EP Deferred" class="image" />
         <div class="text">
@@ -46,7 +42,7 @@ export default {
 
 <style>
 .section {
-  padding: 6rem 1rem; /* Garante um espaçamento uniforme */
+  padding: 6rem 1rem; 
 }
 
 .content {
@@ -61,7 +57,6 @@ h1 {
   color: #fff;
 }
 
-/* Estilo para cada parágrafo e imagem ao lado */
 .text-image {
   display: flex;
   flex-wrap: wrap;
@@ -75,6 +70,7 @@ h1 {
   max-width: 250px;
   object-fit: cover;
   border-radius: 8px;
+  margin-bottom: 4rem;
 }
 
 .text {
