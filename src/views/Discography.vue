@@ -4,11 +4,46 @@
       <h2>Discografia</h2>
       <p>Aqui você encontrará meus álbuns e singles lançados.</p>
 
-      <div v-for="(category, key) in categorizedDiscography" :key="key" class="category-section">
-        <h3>{{ key }}</h3>
+      <!-- Singles -->
+      <div v-if="categorizedDiscography['Single']" id="singles" class="category-section">
+        <h3>Singles</h3>
         <div class="discography-grid">
           <div
-            v-for="(item, index) in category"
+            v-for="(item, index) in categorizedDiscography['Single']"
+            :key="index"
+            class="disc-item"
+            @click="openDetails(item)"
+          >
+            <img :src="item.cover" :alt="item.title" class="cover" />
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.type }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Álbum -->
+      <div v-if="categorizedDiscography['Álbum']" id="albuns" class="category-section">
+        <h3>Álbuns</h3>
+        <div class="discography-grid">
+          <div
+            v-for="(item, index) in categorizedDiscography['Álbum']"
+            :key="index"
+            class="disc-item"
+            @click="openDetails(item)"
+          >
+            <img :src="item.cover" :alt="item.title" class="cover" />
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.type }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Versões -->
+      <div v-if="categorizedDiscography['Versão']" id="versoes" class="category-section">
+        <h3>Versões</h3>
+        <div class="discography-grid">
+          <div
+            v-for="(item, index) in categorizedDiscography['Versão']"
             :key="index"
             class="disc-item"
             @click="openDetails(item)"
@@ -57,7 +92,7 @@ export default {
           cover: require("@/assets/capa-deferred.jpeg"),
           description: "Esse é meu último lançamento, um EP que contém 5 músicas sendo 4 inéditas e uma remasterização.",
           tracks: ["01 - I Don't Wanna More War", "02 - Life Machine", "03 - Refúgio", "04 - Deferred", "05 - O Evento"],
-          video: "https://www.youtube.com/watch?v=MMZ1Q6rsgbE&list=OLAK5uy_mbjyNGVih0T_xpckHunl0SCarYoR45CsA"
+          video: "https://www.youtube.com/embed/MMZ1Q6rsgbE?list=OLAK5uy_mbjyNGVih0T_xpckHunl0SCarYoR45CsA"
         },
         {
           title: "Somebody Told Me",
@@ -65,7 +100,7 @@ export default {
           cover: require("@/assets/capa-somebody-told-me.jpeg"),
           description: "Single lançado em 2020.",
           tracks: ["Somebody Told Me"],
-          video: "https://www.youtube.com/watch?v=6QxB6oeVzgk&list=PLdKtehzRUkBuTcW0oBm4nizaBhAWp79hf&index=4"
+          video: "https://www.youtube.com/embed/6QxB6oeVzgk?list=PLdKtehzRUkBuTcW0oBm4nizaBhAWp79hf&index=4"
         },
         {
           title: "HER",
@@ -73,15 +108,15 @@ export default {
           cover: require("@/assets/capa-her.jpeg"),
           description: "Meu primeiro EP lançado, no começo de 2020 com 6 músicas inéditas.",
           tracks: ["01 - Fix You", "02 - HER", "03 - Mess On My Mind", "04 - Changes", "05 - Between Music and Photos", "06 - Gone"],
-          video: "https://www.youtube.com/watch?v=RmiCMrWEFGw&list=PLdKtehzRUkBtavopYNzxOvp2tbDiOXo_I&index=2"
+          video: "https://www.youtube.com/embed/RmiCMrWEFGw?list=PLdKtehzRUkBtavopYNzxOvp2tbDiOXo_I&index=2"
         },
         {
           title: "End Game",
           type: "Single",
           cover: require("@/assets/capa-end-game.jpeg"),
-          description: "Single lançado no final de 2019. Esse foi o 3º Single lançado na minha carreira..",
+          description: "Single lançado no final de 2019. Esse foi o 3º Single lançado na minha carreira.",
           tracks: ["End Game"],
-          video: "https://www.youtube.com/watch?v=vU5jB6MzGQU&list=PLdKtehzRUkBuTcW0oBm4nizaBhAWp79hf&index=3"
+          video: "https://www.youtube.com/embed/vU5jB6MzGQU?list=PLdKtehzRUkBuTcW0oBm4nizaBhAWp79hf&index=3"
         },
         {
           title: "Insanity Love",
@@ -89,7 +124,7 @@ export default {
           cover: require("@/assets/capa-insanity-love.jpeg"),
           description: "Single lançado em 2019. Esse foi o 2º Single lançado na minha carreira.",
           tracks: ["Insanity Love"],
-          video: "https://www.youtube.com/watch?v=ickIr__1BN0&list=PLdKtehzRUkBuTcW0oBm4nizaBhAWp79hf&index=2"
+          video: "https://www.youtube.com/embed/ickIr__1BN0?list=PLdKtehzRUkBuTcW0oBm4nizaBhAWp79hf&index=2"
         },
         {
           title: "Acorrentado",
@@ -97,7 +132,7 @@ export default {
           cover: require("@/assets/capa-acorrentado.jpg"),
           description: "Primeiro Single lançado na minha carreira. Lançamento em agosto em 2019.",
           tracks: ["Acorrentado"],
-          video: "https://www.youtube.com/watch?v=pWaJbm_nGpU&list=PLdKtehzRUkBuTcW0oBm4nizaBhAWp79hf&index=1"
+          video: "https://www.youtube.com/embed/pWaJbm_nGpU?list=PLdKtehzRUkBuTcW0oBm4nizaBhAWp79hf&index=1"
         },
         {
           title: "Muito Pouco - Moska",
@@ -105,7 +140,7 @@ export default {
           cover: require("@/assets/capa-muito-pouco.jpg"),
           description: "Versão da música 'Muito Pouco' do Paulinho Moska.",
           tracks: ["Muito Pouco - Moska"],
-          video: "https://www.youtube.com/watch?v=4PaoNHjwZ7Y&list=PLdKtehzRUkBvHyuwIususiNZA6l9QchpW&index=3"
+          video: "https://www.youtube.com/embed/4PaoNHjwZ7Y?list=PLdKtehzRUkBvHyuwIususiNZA6l9QchpW&index=3"
         },
         {
           title: "Wide Awake - Audioslave",
@@ -113,7 +148,7 @@ export default {
           cover: require("@/assets/capa-wide-awake.jpg"),
           description: "Versão da música 'Wide Awake' do Audioslave.",
           tracks: ["Wide Awake - Audioslave"],
-          video: "https://www.youtube.com/watch?v=Ep6OxmWQsqE"
+          video: "https://www.youtube.com/embed/Ep6OxmWQsqE"
         },
         {
           title: "O Tempo Não Pára - Cazuza",
@@ -121,7 +156,7 @@ export default {
           cover: require("@/assets/capa-o-tempo-nao-para.jpg"),
           description: "Versão da música 'O Tempo Não Pára do Cazuza.",
           tracks: ["O Tempo Não Pára - Cazuza"],
-          video: "https://www.youtube.com/watch?v=cB1cO29V2l4"
+          video: "https://www.youtube.com/embed/cB1cO29V2l4"
         }
       ],
       selectedItem: null,
@@ -219,6 +254,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .modal-content {
@@ -229,6 +265,8 @@ h3 {
   max-width: 500px;
   color: white;
   position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .modal-cover {

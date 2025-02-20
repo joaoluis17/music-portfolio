@@ -21,7 +21,7 @@
               </li>
               <li>
                 <img :src="require('@/assets/album-icon.svg')" alt="Ícone Álbuns">
-                <a href="#álbuns">Álbuns</a>
+                <a href="#albuns">Álbuns</a>
               </li>
               <li>
                 <img :src="require('@/assets/version-icon.svg')" alt="Ícone Versões">

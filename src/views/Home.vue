@@ -1,9 +1,6 @@
 <template>
   <div class="home">
     <!-- Logo -->
-    <div class="logo-container">
-      <!-- <img src="/assets/logo.png" alt="John Prado Logo" class="logo" /> -->
-    </div>
 
     <section id="inicio" class="section"></section>
 

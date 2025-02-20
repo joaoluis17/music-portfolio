@@ -4,15 +4,15 @@
       <!-- Navegação (à esquerda) -->
       <nav class="footer-nav">
         <ul>
-          <li><router-link to="/">Início</router-link></li>
-          <li><router-link to="/sobre">Sobre</router-link></li>
-          <li><router-link to="/discografia">Discografia</router-link></li>
-          <li><router-link to="/contato">Contato</router-link></li>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#discografia">Discografia</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
         <ul class="discografia-sub">
-          <li><router-link to="/discografia/singles">Singles</router-link></li>
-          <li><router-link to="/discografia/albuns">Álbuns</router-link></li>
-          <li><router-link to="/discografia/versoes">Versões</router-link></li>
+          <li><a href="#singles">Singles</a></li>
+          <li><a href="#albuns">Álbuns</a></li>
+          <li><a href="#versoes">Versões</a></li>
         </ul>
       </nav>
 
