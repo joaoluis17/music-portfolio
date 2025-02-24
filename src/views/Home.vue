@@ -7,19 +7,23 @@
     <About />
     
     <Discography />
+
+    <Contact />
     
   </div>
 </template>
 
 <script>
 import About from './About.vue';
+import Contact from './Contact.vue';
 import Discography from './Discography.vue';
 
 export default {
   name: "Home",
   components: {
     About,
-    Discography
+    Discography,
+    Contact
   }
 };
 </script>
