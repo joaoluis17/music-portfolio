@@ -20,7 +20,7 @@
       <div class="text-image">
         <img src="../assets/capa-hardblend.jpg" alt="Banda Hard Blend" class="image" />
         <div class="text">
-          <p>Em 2023, entrei para a banda Hard Blend como guitarrista e backing vocal, onde permaneci até o início de 2024. Esse foi um período importante na minha carreira, com destaque para minha contribuição na composição da música "Quarentena", que fez parte do álbum "Maçarico Assassino", lançado em setembro de 2024.</p>
+          <p>Em 2023, entrei para a banda Hard Blend (<a href="https://www.instagram.com/oficial_hard_blend/" class="instagram">@oficial_hard_blend</a>) como guitarrista e backing vocal, onde permaneci até o início de 2024. Esse foi um período importante na minha carreira, com destaque para minha contribuição na composição da música "Quarentena", que fez parte do álbum "Maçarico Assassino", lançado em setembro de 2024.</p>
         </div>
       </div>
 
@@ -82,6 +82,17 @@ h1 {
   line-height: 1.6;
   color: #ddd;
   text-align: left;
+}
+
+.instagram {
+  font-weight: semi-bold;
+  text-decoration: none;
+  color: inherit;
+}
+.instagram:hover {
+  font-weight: 900;
+  text-decoration: underline;
+  color: inherit;
 }
 
 /* Responsividade */

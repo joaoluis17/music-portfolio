@@ -2,11 +2,19 @@
   <!-- Cabeçalho -->
   <header class="header">
     <nav>
-      <ul class="menu">
+      <button @click="menuOpen = !menuOpen" class="hamburger-button">
+        <svg v-if="!menuOpen" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <svg v-else class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      
+      <ul class="menu" :class="menuOpen ? 'open' : 'closed'">
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
 
-        <!-- Discografia com Dropdown -->
         <li 
           class="menu-discografia"
           @mouseenter="mostrarDiscografia = true"
@@ -43,6 +51,7 @@ export default {
   data() {
     return {
       mostrarDiscografia: false,
+      menuOpen: false,
     };
   },
 };
@@ -124,9 +133,36 @@ export default {
   font-size: 16px;
 }
 
+/* Hamburger button - Menu Toggle */
+.hamburger-button {
+  display: none;
+  padding: 10px;
+  background-color: aliceblue;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger-button svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
-  .menu {
+  /* Mostrar botão hamburger em dispositivos móveis */
+  .hamburger-button {
+    display: block;
+  }
+
+  /* Menu fechado */
+  .menu.closed {
+    display: none;
+  }
+
+  /* Menu aberto */
+  .menu.open {
+    display: block;
     flex-direction: column;
     text-align: center;
     gap: 10px;
@@ -140,6 +176,20 @@ export default {
     position: relative;
     width: auto;
     text-align: left;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu {
+    flex-direction: row;
+  }
+
+  .menu li {
+    padding: 10px 20px;
+  }
+
+  .hamburger-button {
+    display: none;
   }
 }
 </style>

@@ -113,4 +113,40 @@ export default {
 .social-links a:hover img {
   transform: scale(1.2);
 }
+
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Mantém os links de navegação no topo */
+  .footer-nav {
+    order: 1; /* Define a ordem da navegação */
+  }
+
+  .footer-nav ul {
+    flex-direction: row; /* Mantém os links um ao lado do outro */
+    flex-wrap: wrap; /* Caso necessário, permite quebra de linha */
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Texto do site fica no meio */
+  .footer-text {
+    order: 2; /* Define a ordem do texto */
+    margin: 1rem 0;
+  }
+
+  /* Ícones sociais ficam por último */
+  .social-links {
+    order: 3; /* Define a ordem dos ícones sociais */
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
 </style>

@@ -1,15 +1,10 @@
 <template>
   <div class="home">
     <!-- Logo -->
-
     <section id="inicio" class="section"></section>
-
     <About />
-    
     <Discography />
-
     <Contact />
-    
   </div>
 </template>
 
@@ -68,18 +63,39 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
 }
 
+/* Fundo da primeira seção (inicio) */
 #inicio {
   background-image: url('../assets/bg-inicio.jpg');
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+  .section {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top center;
+  }
+}
 @media (max-width: 768px) {
   .logo {
     width: 150px;
+  }
+
+  #inicio {
+    background-attachment: scroll; /* Remove o efeito de paralaxe */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center; /* Centraliza a imagem */
+  }
+  
+  /* Ajustes nas seções em telas menores */
+  .section {
+    padding: 2rem 1rem; /* Menos padding nas seções para o mobile */
   }
 }
 </style>
